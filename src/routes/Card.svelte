@@ -1,15 +1,21 @@
 <script lang="ts">
 	import projects from './../lib/projects.json';
-	export let current: number;
-	$: now = projects[current];
+	let { current = 0, ...rest } = $props();
+	let project = $derived(projects[current]);
+
+	let diffStars = $derived.by(() => {
+		if (!project) return '';
+		return '⭐'.repeat(project.difficulty || 0);
+	});
 </script>
 
-<div class="mncrd" {...$$restProps}>
-	<h4>{now.title}</h4>
-	<h4>{now.description}</h4>
-	<h4>{now.difficulty}</h4>
-	<h4>{now.stack}</h4>
+<div class="mncrd" {...rest}>
+	{#if project}
+		<h4>{project.title}</h4>
+		<h4>{project.description}</h4>
+		<h4>{diffStars} ({project.difficulty})</h4>
+		<h4>{project.stack}</h4>
+	{:else}
+		<h4>Yeah you're never gonna find a project :(</h4>
+	{/if}
 </div>
-
-<style>
-</style>
