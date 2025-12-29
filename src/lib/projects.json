@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "GitGlance",
+    "description": "A dashboard that visualizes your GitHub contribution graph as a 3D city using Three.js.",
+    "difficulty": "Intermediate",
+    "stack": [
+      "Svelte",
+      "Three.js",
+      "GitHub API"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "PromptPay",
+    "description": "A micro-SaaS platform where users can sell highly-optimized LLM prompts.",
+    "difficulty": "Advanced",
+    "stack": [
+      "SvelteKit",
+      "Stripe",
+      "Supabase"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "FocusFlow",
+    "description": "A Pomodoro timer that automatically pauses your Spotify music when the break ends.",
+    "difficulty": "Beginner",
+    "stack": [
+      "Bun",
+      "Svelte",
+      "Spotify API"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "CodeSnap CLI",
+    "description": "A terminal tool that takes beautiful screenshots of your code snippets for Twitter.",
+    "difficulty": "Intermediate",
+    "stack": [
+      "Bun",
+      "TypeScript",
+      "Canvas"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "BugBounty Hunter",
+    "description": "An aggregator that swipes through open-source 'Good First Issues' from GitHub.",
+    "difficulty": "Beginner",
+    "stack": [
+      "Svelte",
+      "GitHub API",
+      "Tailwind"
+    ]
+  }
+]
