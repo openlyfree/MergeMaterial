@@ -11,26 +11,31 @@
 		offsetX = 0;
 	};
 
-	function onMouseDown(e: MouseEvent) {
+	// Helper to get X position from either Mouse or Touch
+	const getX = (e: MouseEvent | TouchEvent) => {
+		return 'touches' in e ? e.touches[0].clientX : e.clientX;
+	};
+
+	function onStart(e: MouseEvent | TouchEvent) {
 		dragging = true;
-		startX = e.clientX;
+		startX = getX(e);
 	}
 
-	function onMouseMove(e: MouseEvent) {
+	function onMove(e: MouseEvent | TouchEvent) {
 		if (!dragging) return;
-		offsetX = e.clientX - startX;
+		offsetX = getX(e) - startX;
 
-		// Swipe Threshold
 		if (Math.abs(offsetX) > 150) {
 			dragging = false;
 			next();
 		}
 	}
 
-	function onMouseUp() {
+	function onEnd() {
 		dragging = false;
 		offsetX = 0;
 	}
+
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'ArrowRight') next();
 	}
@@ -38,19 +43,29 @@
 
 <svelte:window onkeydown={handleKeydown} />
 
-<main class="select-none">
+<main class="overflow-hidden select-none">
 	<h1>MergeMaterial</h1>
 
 	<div
 		role="presentation"
-		onmousedown={onMouseDown}
-		onmousemove={onMouseMove}
-		onmouseup={onMouseUp}
-		onmouseleave={onMouseUp}
-		style="transform: translateX({offsetX}px) rotate({offsetX * 0.05}deg); cursor: {dragging
-			? 'grabbing'
-			: 'grab'}"
+		class="card-container"
+		onmousedown={onStart}
+		onmousemove={onMove}
+		onmouseup={onEnd}
+		ontouchstart={onStart}
+		ontouchmove={onMove}
+		ontouchend={onEnd}
 	>
-		<Card current={now} />
+		<Card current={now} {offsetX} />
 	</div>
 </main>
+
+<style>
+	.card-container {
+		touch-action: pan-y;
+		user-select: none;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+</style>
