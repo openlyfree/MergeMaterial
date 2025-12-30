@@ -12,8 +12,8 @@
 	onMount(() => {
 		const stored = localStorage.getItem('likedProjects');
 		if (stored) likedIndices = [...new Set(JSON.parse(stored) as number[])];
-		//const lastIdx = localStorage.getItem('lastIdx');
-		//if (lastIdx) now = parseInt(lastIdx);
+		const lastIdx = localStorage.getItem('lastIdx');
+		if (lastIdx) now = parseInt(lastIdx);
 	});
 
 	const next = (like: boolean) => {
