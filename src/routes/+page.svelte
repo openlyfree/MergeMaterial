@@ -2,31 +2,47 @@
 	import { onMount } from 'svelte';
 	import Card from './Card.svelte';
 	import LikedProjects from './LikedProjects.svelte';
+	import projects from '../lib/projects.json';
 
 	let now = $state(0),
-		likedProjects: number[] = $state([]);
+		likedIndices: number[] = $state([]);
+
+	const likedProjects = $derived(likedIndices.map((i) => projects[i]).filter(Boolean));
 
 	onMount(() => {
 		const stored = localStorage.getItem('likedProjects');
-		if (stored) likedProjects = JSON.parse(stored);
+		if (stored) likedIndices = [...new Set(JSON.parse(stored) as number[])];
+		const lastIdx = localStorage.getItem('lastIdx');
+		if (lastIdx) now = parseInt(lastIdx);
 	});
 
 	const next = (like: boolean) => {
-		if (like) {
-			likedProjects.push(now);
-			localStorage.setItem('likedProjects', JSON.stringify(likedProjects));
-		} else
-			localStorage.setItem(
-				'dislikedProjects',
-				JSON.stringify([...JSON.parse(localStorage.getItem('dislikedProjects') || '[]'), now])
-			);
+		if (now >= projects.length) return;
 
+		if (like) {
+			if (!likedIndices.includes(now)) {
+				likedIndices.push(now);
+				localStorage.setItem('likedProjects', JSON.stringify(likedIndices));
+			}
+		} else {
+			const disliked = JSON.parse(localStorage.getItem('dislikedProjects') || '[]');
+			if (!disliked.includes(now)) {
+				disliked.push(now);
+				localStorage.setItem('dislikedProjects', JSON.stringify(disliked));
+			}
+		}
 		now++;
+		localStorage.setItem('lastIdx', now.toString());
 	};
 </script>
 
 <main>
-	<div><Card current={now} getNext={next} /></div>
+	<div class="lk">
+		<LikedProjects {likedProjects} />
+	</div>
+	<div class="card">
+		<Card current={now} getNext={next} />
+	</div>
 </main>
 
 <style>
