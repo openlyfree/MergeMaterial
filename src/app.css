@@ -8,4 +8,13 @@
 		overflow-x: hidden;
 		height: 100%;
 	}
+  
+	main {
+		width: 100vh;
+		height: 100vh;
+	}
+  
+  h1 {
+    font-size: x-large;
+  }
 }

@@ -69,7 +69,7 @@
 		width: 300px;
 		height: 400px;
 		border-radius: 12px;
-		border: 1px solid #ccc;
+		border: 2px solid #ccc;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -80,7 +80,7 @@
 		user-select: none;
 		display: flex;
 		justify-content: center;
-		border: 1px solid #eee;
+		border: 2px solid #eee;
 	}
 
 	h4 {

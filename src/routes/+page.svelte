@@ -12,8 +12,8 @@
 	onMount(() => {
 		const stored = localStorage.getItem('likedProjects');
 		if (stored) likedIndices = [...new Set(JSON.parse(stored) as number[])];
-		const lastIdx = localStorage.getItem('lastIdx');
-		if (lastIdx) now = parseInt(lastIdx);
+		//const lastIdx = localStorage.getItem('lastIdx');
+		//if (lastIdx) now = parseInt(lastIdx);
 	});
 
 	const next = (like: boolean) => {
@@ -36,14 +36,33 @@
 	};
 </script>
 
-<main>
+<div class="container">
 	<div class="lk">
 		<LikedProjects {likedProjects} />
 	</div>
-	<div class="card">
-		<Card current={now} getNext={next} />
+
+	<div class="card-area">
+		<h1 class="title">MergeMaterial</h1>
+		<div class="card-wrapper"><Card current={now} getNext={next} /></div>
 	</div>
-</main>
+</div>
 
 <style>
+	.container {
+		display: flex;
+		flex-direction: row;
+	}
+	.card-area {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+  .card-wrapper {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+    justify-content: center;
+  }
 </style>
