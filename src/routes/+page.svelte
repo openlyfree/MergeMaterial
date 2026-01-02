@@ -49,20 +49,45 @@
 
 <style>
 	.container {
-		display: flex;
-		flex-direction: row;
+		position: relative;
+		min-height: 100vh;
+		width: 100vw;
 	}
+
+	.lk {
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 10;
+	}
+
 	.card-area {
-		flex: 1;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 	}
-  .card-wrapper {
-		flex: 1;
+
+	.title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 3rem;
+		background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		letter-spacing: -0.05em;
+		text-align: center;
+	}
+
+	.card-wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-    justify-content: center;
-  }
+		justify-content: center;
+	}
 </style>
