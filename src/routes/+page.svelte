@@ -10,29 +10,39 @@
 	const likedProjects = $derived(likedIndices.map((i) => projects[i]).filter(Boolean));
 
 	onMount(() => {
-		const stored = localStorage.getItem('likedProjects');
-		if (stored) likedIndices = [...new Set(JSON.parse(stored) as number[])];
-		const lastIdx = localStorage.getItem('lastIdx');
-		if (lastIdx) now = parseInt(lastIdx);
+		try {
+			const stored = localStorage.getItem('likedProjects');
+			const lastIdx = localStorage.getItem('lastIdx');
+
+			if (stored) likedIndices = [...new Set(JSON.parse(stored) as number[])];
+
+			if (lastIdx) now = parseInt(lastIdx);
+		} catch (error) {
+			console.error('local storage or json parse:', error);
+		}
 	});
 
 	const next = (like: boolean) => {
 		if (now >= projects.length) return;
 
-		if (like) {
-			if (!likedIndices.includes(now)) {
-				likedIndices.push(now);
-				localStorage.setItem('likedProjects', JSON.stringify(likedIndices));
+		try {
+			if (like) {
+				if (!likedIndices.includes(now)) {
+					likedIndices.push(now);
+					localStorage.setItem('likedProjects', JSON.stringify(likedIndices));
+				}
+			} else {
+				const disliked = JSON.parse(localStorage.getItem('dislikedProjects') || '[]');
+				if (!disliked.includes(now)) {
+					disliked.push(now);
+					localStorage.setItem('dislikedProjects', JSON.stringify(disliked));
+				}
 			}
-		} else {
-			const disliked = JSON.parse(localStorage.getItem('dislikedProjects') || '[]');
-			if (!disliked.includes(now)) {
-				disliked.push(now);
-				localStorage.setItem('dislikedProjects', JSON.stringify(disliked));
-			}
+			now++;
+			localStorage.setItem('lastIdx', now.toString());
+		} catch (error) {
+			console.error('local storage or json parse:', error);
 		}
-		now++;
-		localStorage.setItem('lastIdx', now.toString());
 	};
 </script>
 
