@@ -8,16 +8,32 @@
 </script>
 
 <div class="container" class:closed={!isOpen} {...rest}>
-	<button class="toggle-btn" onclick={togglePanel} aria-label={isOpen ? 'Close panel' : 'Open panel'}>
+	<button
+		class="toggle-btn"
+		onclick={togglePanel}
+		aria-label={isOpen ? 'Close panel' : 'Open panel'}
+	>
 		<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 			{#if isOpen}
-				<path d="M12 5L7 10L12 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path
+					d="M12 5L7 10L12 15"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
 			{:else}
-				<path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path
+					d="M8 5L13 10L8 15"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
 			{/if}
 		</svg>
 	</button>
-	
+
 	<div class="content">
 		<h1>Liked Projects</h1>
 		{#if likedProjects.length === 0}
