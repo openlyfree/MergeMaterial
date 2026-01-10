@@ -4,14 +4,14 @@
 
 MergeMaterial is a web app designed to cure developer's block. It presents a daily-refreshed stream of unique, complex coding project ideas in a swipeable, Tinder-style interface.
 
-## ✨ Features
+## Features
 
-- **🔥 Daily Fresh Ideas**: Project ideas are generated daily using **Google's Gemini 1.5 Flash API**.
-- **👆 Swipe Interface**: Intuitive card-based interface. Swipe **Right** to Like (save), **Left** to Dislike (skip).
-- **💾 Local Persistence**: Your liked projects and progress are saved automatically to your browser's local storage. No account needed.
+- **Daily Fresh Ideas**: Project ideas are generated daily using **Google's Gemini 1.5 Flash API**.
+- **Swipe Interface**: Intuitive card-based interface. Swipe **Right** to Like (save), **Left** to Dislike (skip).
+- **Local Persistence**: Your liked projects and progress are saved automatically to your browser's local storage. No account needed.
 - **📱 Responsive**: Works great on both desktop and mobile devices.
 
-## 🛠️ Tech Stack
+## Stack
 
 Built with the latest web technologies:
 
