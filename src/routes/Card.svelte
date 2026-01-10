@@ -2,10 +2,6 @@
 	import projects from './../lib/projects.json';
 	let { current = 0, getNext, ...rest } = $props(),
 		project = $derived(projects[current]),
-		diffStars = $derived.by(() => {
-			if (!project) return '';
-			return '⭐'.repeat(project.difficulty || 0);
-		}),
 		dragging = $state(false),
 		startX = $state(0),
 		offsetX = $state(0);
@@ -62,7 +58,14 @@
 		<div class="content">
 			<h4 class="title">{project.title}</h4>
 			<h4 class="description">{project.description}</h4>
-			<h4 class="difficulty">{diffStars} ({project.difficulty})</h4>
+			<div class="difficulty-container">
+				<span class="difficulty-label">Difficulty</span>
+				<div class="stars">
+					{#each Array(5) as _, i}
+						<span class="star" class:filled={i < (project.difficulty || 0)}>★</span>
+					{/each}
+				</div>
+			</div>
 			<div class="stack-container">
 				{#each project.stack as tech}
 					<span class="chip">{tech}</span>
@@ -141,9 +144,37 @@
 		max-width: 320px;
 	}
 
-	.difficulty {
-		font-size: 1.5rem;
+	.difficulty-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.25rem;
 		margin-bottom: 1.5rem;
+	}
+
+	.difficulty-label {
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: #666;
+		font-weight: 600;
+	}
+
+	.stars {
+		display: flex;
+		gap: 4px;
+	}
+
+	.star {
+		font-size: 1.25rem;
+		color: rgba(255, 255, 255, 0.15);
+		transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+
+	.star.filled {
+		color: #ffd700;
+		transform: scale(1.1);
+		text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
 	}
 
 	.stack-container {
