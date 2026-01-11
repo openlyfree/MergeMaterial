@@ -59,7 +59,7 @@ The projects are statically stored in `src/lib/projects.json`. To regenerate the
    ```bash
    bun run scripts/generate.ts
    ```
-   or 
+   or
    ```bash
    bun --env-file=.env scripts/generate.ts
    ```

@@ -61,13 +61,13 @@
 			<div class="difficulty-container">
 				<span class="difficulty-label">Difficulty</span>
 				<div class="stars">
-					{#each Array(5) as _, i}
+					{#each { length: 5 } as _, i (i)}
 						<span class="star" class:filled={i < (project.difficulty || 0)}>★</span>
 					{/each}
 				</div>
 			</div>
 			<div class="stack-container">
-				{#each project.stack as tech}
+				{#each project.stack as tech (tech)}
 					<span class="chip">{tech}</span>
 				{/each}
 			</div>

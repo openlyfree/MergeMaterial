@@ -1,37 +1,366 @@
 [
 	{
-		"id": 1,
-		"title": "GitGlance",
-		"description": "A dashboard that visualizes your GitHub contribution graph as a 3D city using Three.js.",
+		"id": 54,
+		"title": "AI-powered Email Subject Line Generator",
+		"description": "Micro-SaaS that takes email body/keywords, uses an LLM API to suggest compelling subject lines, and allows A/B testing insights.",
 		"difficulty": 3,
-		"stack": ["Svelte", "Three.js", "GitHub API"]
+		"stack": ["Next.js", "OpenAI API", "PostgreSQL"]
 	},
 	{
-		"id": 2,
-		"title": "PromptPay",
-		"description": "A micro-SaaS platform where users can sell highly-optimized LLM prompts.",
-		"difficulty": 5,
-		"stack": ["SvelteKit", "Stripe", "Supabase"]
+		"id": 55,
+		"title": "Git Commit Message Linter & Generator CLI",
+		"description": "A CLI tool that enforces conventional commit messages and can suggest a message based on staged changes using an LLM.",
+		"difficulty": 2,
+		"stack": ["Rust", "Git CLI", "OpenAI API"]
 	},
 	{
-		"id": 3,
-		"title": "FocusFlow",
-		"description": "A Pomodoro timer that automatically pauses your Spotify music when the break ends.",
-		"difficulty": 1,
-		"stack": ["Bun", "Svelte", "Spotify API"]
-	},
-	{
-		"id": 4,
-		"title": "CodeSnap CLI",
-		"description": "A terminal tool that takes beautiful screenshots of your code snippets for Twitter.",
+		"id": 56,
+		"title": "Notion-to-Blog RSS Feed Generator",
+		"description": "A serverless function that converts public Notion pages into a valid RSS feed, allowing users to publish blogs directly from Notion.",
 		"difficulty": 3,
-		"stack": ["Bun", "TypeScript", "Canvas"]
+		"stack": ["Cloudflare Workers", "Notion API", "XML Builder"]
 	},
 	{
-		"id": 5,
-		"title": "BugBounty Hunter",
-		"description": "An aggregator that swipes through open-source 'Good First Issues' from GitHub.",
-		"difficulty": 1,
-		"stack": ["Svelte", "GitHub API", "Tailwind"]
+		"id": 57,
+		"title": "Personalized News Digest via Email",
+		"description": "A service where users specify topics/sources, and receive a daily or weekly email with summarized articles from various news APIs.",
+		"difficulty": 3,
+		"stack": ["Python", "News API", "SendGrid"]
+	},
+	{
+		"id": 58,
+		"title": "Dynamic Image Placeholder Service",
+		"description": "A Micro-SaaS that generates placeholder images with custom text, colors, and dimensions via URL parameters (e.g., '/img/200x300?text=Hello').",
+		"difficulty": 2,
+		"stack": ["Go", "ImageMagick", "Redis"]
+	},
+	{
+		"id": 59,
+		"title": "Code Snippet Manager with AI Tags",
+		"description": "A desktop application (or web app) where users can store code snippets, automatically tagged by an AI model based on the code's content and language.",
+		"difficulty": 4,
+		"stack": ["Electron", "Monaco Editor", "OpenAI API"]
+	},
+	{
+		"id": 60,
+		"title": "API Uptime Monitor & Status Page Generator",
+		"description": "A service that pings user-defined API endpoints at intervals, logs their status, and automatically generates a public status page.",
+		"difficulty": 3,
+		"stack": ["Node.js", "Cron", "Express.js"]
+	},
+	{
+		"id": 61,
+		"title": "Browser Extension for Text Summarization",
+		"description": "A browser extension that summarizes the content of the current webpage using a text summarization API.",
+		"difficulty": 3,
+		"stack": ["Web Extensions API", "Cohere API", "React"]
+	},
+	{
+		"id": 62,
+		"title": "CLI for Managing Cloudflare DNS Records",
+		"description": "A command-line interface tool to programmatically add, update, and delete DNS records on Cloudflare.",
+		"difficulty": 2,
+		"stack": ["Python", "Cloudflare API", "Click"]
+	},
+	{
+		"id": 63,
+		"title": "SaaS Idea Generator (LLM-powered)",
+		"description": "A web application where users input a niche or problem, and an LLM suggests micro-SaaS ideas, including potential monetization strategies.",
+		"difficulty": 3,
+		"stack": ["Svelte", "OpenAI API", "Supabase"]
+	},
+	{
+		"id": 64,
+		"title": "Timezone Converter & Meeting Scheduler",
+		"description": "A web tool that displays multiple timezones, allows scheduling a meeting, and generates a shareable link that automatically adjusts for recipient's timezone.",
+		"difficulty": 2,
+		"stack": ["Vue.js", "Moment-Timezone", "Firebase"]
+	},
+	{
+		"id": 65,
+		"title": "Webhook Debugger & Inspector",
+		"description": "A simple service that provides a unique URL to receive webhooks, logs their payloads, and allows inspecting the data for debugging purposes.",
+		"difficulty": 2,
+		"stack": ["Node.js", "Express.js", "Socket.IO"]
+	},
+	{
+		"id": 66,
+		"title": "GitHub Starred Repo Categorizer",
+		"description": "A tool that fetches a user's starred GitHub repositories and allows categorizing them into custom lists, perhaps suggesting categories with AI.",
+		"difficulty": 3,
+		"stack": ["Next.js", "GitHub API", "OpenAI API"]
+	},
+	{
+		"id": 67,
+		"title": "CLI for Generating README.md from Codebase",
+		"description": "A command-line tool that scans a project's files, infers its purpose, dependencies, and usage, and drafts a comprehensive `README.md` using an LLM.",
+		"difficulty": 4,
+		"stack": ["Python", "OpenAI API", "Tree-Sitter"]
+	},
+	{
+		"id": 68,
+		"title": "Serverless Cron Job Manager",
+		"description": "A web UI to define and manage serverless cron jobs (e.g., execute a HTTP request, run a Lambda function) with logging and alerts.",
+		"difficulty": 4,
+		"stack": ["React", "AWS Lambda", "AWS EventBridge"]
+	},
+	{
+		"id": 69,
+		"title": "Color Palette Generator from Image URL",
+		"description": "A web tool where users provide an image URL, and the service extracts dominant colors to generate a harmonious color palette.",
+		"difficulty": 2,
+		"stack": ["Svelte", "Color Thief", "FastAPI"]
+	},
+	{
+		"id": 70,
+		"title": "Markdown-based Slide Deck Generator",
+		"description": "A web application or CLI that takes a Markdown file and converts it into a presentable, interactive slide deck (e.g., Reveal.js, Marp).",
+		"difficulty": 3,
+		"stack": ["Vue.js", "Showdown.js", "Reveal.js"]
+	},
+	{
+		"id": 71,
+		"title": "Cryptocurrency Price Alert Service",
+		"description": "A service where users set price thresholds for cryptocurrencies, and receive notifications (email/SMS) when the price crosses the threshold.",
+		"difficulty": 3,
+		"stack": ["Node.js", "CoinGecko API", "Twilio"]
+	},
+	{
+		"id": 72,
+		"title": "Code Review Assistant (LLM-powered)",
+		"description": "A web service or VS Code extension that analyzes git diffs and provides suggestions for improvements or potential bugs using an LLM.",
+		"difficulty": 4,
+		"stack": ["VS Code API", "OpenAI API", "TypeScript"]
+	},
+	{
+		"id": 73,
+		"title": "RSS Feed to Email Newsletter Converter",
+		"description": "A Micro-SaaS that subscribes to user-defined RSS feeds and aggregates new posts into a beautifully formatted email newsletter sent periodically.",
+		"difficulty": 3,
+		"stack": ["Python", "Feedparser", "Mailgun"]
+	},
+	{
+		"id": 74,
+		"title": "CLI for Generating Temporary Email Addresses",
+		"description": "A command-line utility that fetches a temporary email address, allows receiving emails, and displaying their content for testing purposes.",
+		"difficulty": 3,
+		"stack": ["Go", "Guerrilla Mail API", "Cobra"]
+	},
+	{
+		"id": 75,
+		"title": "Screenshot as a Service",
+		"description": "An API that takes a URL, an optional viewport size, and returns a high-quality screenshot of the webpage.",
+		"difficulty": 3,
+		"stack": ["Node.js", "Playwright", "Express.js"]
+	},
+	{
+		"id": 76,
+		"title": "Developer Portfolio Site Builder from GitHub",
+		"description": "A web application that pulls a developer's public GitHub data (repos, commits, contributions) and generates a customizable portfolio website.",
+		"difficulty": 3,
+		"stack": ["Next.js", "GitHub API", "Tailwind CSS"]
+	},
+	{
+		"id": 77,
+		"title": "Local File Sharing Tool (P2P via WebRTC)",
+		"description": "A web application that allows users on the same local network to share files directly without a central server, using WebRTC.",
+		"difficulty": 4,
+		"stack": ["React", "WebRTC API", "Socket.IO"]
+	},
+	{
+		"id": 78,
+		"title": "Personalized Podcast Playlist Generator",
+		"description": "A service that analyzes user interests (e.g., from an RSS feed of articles they read) and suggests podcast episodes, building a custom audio playlist.",
+		"difficulty": 4,
+		"stack": ["Python", "Spotify API", "Machine Learning"]
+	},
+	{
+		"id": 79,
+		"title": "Dead Link Checker & Reporter (Website Scanner)",
+		"description": "A web tool or CLI that crawls a given website URL, identifies broken links (404s), and generates a report.",
+		"difficulty": 3,
+		"stack": ["Go", "Colly", "HTML Parser"]
+	},
+	{
+		"id": 80,
+		"title": "Multi-Language Code Formatter API",
+		"description": "A web API that receives code in various languages and returns it formatted according to popular style guides (e.g., Prettier, Black).",
+		"difficulty": 3,
+		"stack": ["Node.js", "Prettier", "FastAPI"]
+	},
+	{
+		"id": 81,
+		"title": "Micro-SaaS for Public API Monitoring",
+		"description": "A service where users can register public APIs they rely on, get notified of breaking changes (e.g., schema changes, endpoint removal) using API diff tools.",
+		"difficulty": 4,
+		"stack": ["Python", "OpenAPI Spec", "DeepDiff"]
+	},
+	{
+		"id": 82,
+		"title": "Bookmark Manager with Read-It-Later & AI Tags",
+		"description": "A web application or browser extension to save bookmarks, extract content for offline reading, and automatically tag them using an LLM.",
+		"difficulty": 4,
+		"stack": ["SvelteKit", "Readability.js", "OpenAI API"]
+	},
+	{
+		"id": 83,
+		"title": "Customizable Code Snippet Embedder",
+		"description": "A service that takes a code snippet, styles it beautifully (like GitHub Gist), and provides an embeddable HTML/JS snippet for blogs or websites.",
+		"difficulty": 3,
+		"stack": ["Vue.js", "Highlight.js", "Express.js"]
+	},
+	{
+		"id": 84,
+		"title": "Invoice Generator from Timesheets (Micro-SaaS)",
+		"description": "A simple Micro-SaaS where freelancers can log their hours, specify rates, and generate professional PDF invoices automatically.",
+		"difficulty": 3,
+		"stack": ["Next.js", "jsPDF", "Stripe API"]
+	},
+	{
+		"id": 85,
+		"title": "AI-powered Image Caption Generator",
+		"description": "An API or web tool where users upload an image, and an AI model generates descriptive captions, useful for accessibility or social media.",
+		"difficulty": 4,
+		"stack": ["Python", "TensorFlow", "FastAPI"]
+	},
+	{
+		"id": 86,
+		"title": "CLI for Managing Git Aliases Across Projects",
+		"description": "A command-line tool to centralize and manage common Git aliases, ensuring consistency across different development environments.",
+		"difficulty": 2,
+		"stack": ["Node.js", "Shell.js", "YAML"]
+	},
+	{
+		"id": 87,
+		"title": "Automated Tweet Thread Creator from Long Text",
+		"description": "A web application where users paste long text, and an LLM breaks it down into a coherent, engaging Twitter thread, adhering to character limits.",
+		"difficulty": 3,
+		"stack": ["SvelteKit", "OpenAI API", "Twitter API"]
+	},
+	{
+		"id": 88,
+		"title": "Custom API Key & Secret Manager (Local/Cloud)",
+		"description": "A secure desktop application or CLI that helps developers manage their API keys and secrets, encrypting them and making them easily accessible for different projects.",
+		"difficulty": 3,
+		"stack": ["Electron", "Keytar", "SQLite"]
+	},
+	{
+		"id": 89,
+		"title": "Markdown-driven Task List Manager with Deadlines",
+		"description": "A web application that parses a Markdown file containing tasks (e.g., '[ ] task @due(2023-12-31)'), displays them, and sends reminders.",
+		"difficulty": 3,
+		"stack": ["React", "Remark.js", "Node-Schedule"]
+	},
+	{
+		"id": 90,
+		"title": "Website Change Detector & Notifier",
+		"description": "A service where users specify URLs, and the tool periodically checks for visual or content changes, sending notifications upon detection.",
+		"difficulty": 4,
+		"stack": ["Python", "Playwright", "Selenium"]
+	},
+	{
+		"id": 91,
+		"title": "Open-Source Library Discovery Tool",
+		"description": "A web application that helps developers discover new open-source libraries based on tech stack, popularity, recent activity, and AI-driven recommendations.",
+		"difficulty": 4,
+		"stack": ["Next.js", "GitHub API", "Elasticsearch"]
+	},
+	{
+		"id": 92,
+		"title": "API Documentation Generator from OpenAPI Spec",
+		"description": "A web tool that takes an OpenAPI/Swagger JSON/YAML file and generates beautiful, interactive API documentation.",
+		"difficulty": 3,
+		"stack": ["Vue.js", "Swagger-UI", "Express.js"]
+	},
+	{
+		"id": 93,
+		"title": "Terminal-based Pomodoro Timer with Music Integration",
+		"description": "A CLI Pomodoro timer that optionally integrates with a music streaming service API (e.g., Spotify) to play focus music during work intervals.",
+		"difficulty": 3,
+		"stack": ["Rust", "Spotify API", "Termion"]
+	},
+	{
+		"id": 94,
+		"title": "Cloud Cost Estimator (Micro-SaaS)",
+		"description": "A web tool that helps estimate cloud costs (AWS, Azure, GCP) based on selected services and usage metrics, using their respective pricing APIs.",
+		"difficulty": 4,
+		"stack": ["SvelteKit", "AWS Pricing API", "Google Cloud API"]
+	},
+	{
+		"id": 95,
+		"title": "Collaborative Code Pastebin with Real-time Sync",
+		"description": "A web application that allows multiple users to simultaneously edit and share code snippets with real-time synchronization.",
+		"difficulty": 4,
+		"stack": ["React", "ShareDB", "WebSocket"]
+	},
+	{
+		"id": 96,
+		"title": "Personal CRM for Networking Events",
+		"description": "A web application to track contacts made at networking events, including notes, follow-up reminders, and social media links.",
+		"difficulty": 3,
+		"stack": ["Next.js", "SendGrid", "PostgreSQL"]
+	},
+	{
+		"id": 97,
+		"title": "Code Obfuscator/Minifier CLI for Specific Languages",
+		"description": "A command-line tool that takes source code in a specific language (e.g., JavaScript, Python) and applies obfuscation or advanced minification techniques.",
+		"difficulty": 3,
+		"stack": ["Node.js", "UglifyJS", "Babel"]
+	},
+	{
+		"id": 98,
+		"title": "AI-Powered Meeting Minutes Summarizer",
+		"description": "A web service where users upload meeting transcripts (text or audio), and an LLM summarizes key decisions, action items, and participants.",
+		"difficulty": 4,
+		"stack": ["Python", "AssemblyAI", "OpenAI API"]
+	},
+	{
+		"id": 99,
+		"title": "Dynamic OG Image Generator for Blog Posts",
+		"description": "A serverless function or API that generates custom Open Graph images (for social sharing) based on a blog post's title and author via URL parameters.",
+		"difficulty": 3,
+		"stack": ["Vercel Edge Functions", "Satori", "Resvg"]
+	},
+	{
+		"id": 100,
+		"title": "Browser Extension for Web Performance Insights",
+		"description": "A browser extension that, with a click, analyzes the current page's performance metrics (LCP, FID, CLS) using browser APIs and offers optimization tips.",
+		"difficulty": 3,
+		"stack": ["Web Extensions API", "Performance API", "Chart.js"]
+	},
+	{
+		"id": 101,
+		"title": "Data Visualizer for Public Datasets (Micro-SaaS)",
+		"description": "A web tool that allows users to upload or link to public datasets (CSV, JSON) and generate various interactive charts and graphs without coding.",
+		"difficulty": 4,
+		"stack": ["Svelte", "D3.js", "Papa Parse"]
+	},
+	{
+		"id": 102,
+		"title": "CLI for Managing Dotfiles with Git Sync",
+		"description": "A command-line utility to symlink dotfiles to a central Git repository, making it easy to synchronize configurations across machines.",
+		"difficulty": 2,
+		"stack": ["Bash", "Git", "Symlinks"]
+	},
+	{
+		"id": 103,
+		"title": "Automated Test Data Generator (API-driven)",
+		"description": "A service that generates realistic-looking test data (names, addresses, emails, product details) based on user-defined schemas, via an API.",
+		"difficulty": 3,
+		"stack": ["Go", "Faker.js", "PostgreSQL"]
+	},
+	{
+		"id": 104,
+		"title": "Real-time Stock/Crypto Portfolio Tracker",
+		"description": "A web application that tracks a user's stock or cryptocurrency portfolio value in real-time, fetching live prices from financial APIs.",
+		"difficulty": 3,
+		"stack": ["React", "WebSocket API", "Finnhub API"]
+	},
+	{
+		"id": 105,
+		"title": "Codebase Dependency Visualizer",
+		"description": "A CLI tool that scans a project's source code, identifies dependencies between modules/files, and generates a visual graph representation.",
+		"difficulty": 4,
+		"stack": ["Python", "AST Parser", "Graphviz"]
 	}
 ]

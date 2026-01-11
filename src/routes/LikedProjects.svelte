@@ -1,10 +1,7 @@
 <script lang="ts">
-	let { likedProjects = [], ...rest } = $props();
-	let isOpen = $state(true);
-
-	function togglePanel() {
-		isOpen = !isOpen;
-	}
+	let { likedProjects = [], ...rest } = $props(),
+		isOpen = $state(true),
+		togglePanel = () => (isOpen = !isOpen);
 </script>
 
 <div class="container" class:closed={!isOpen} {...rest}>
@@ -40,11 +37,11 @@
 			<p>No liked projects yet.</p>
 		{:else}
 			<ul>
-				{#each likedProjects as project}
+				{#each likedProjects as project (project.id)}
 					<li>
 						<h5>{project.title}</h5>
 						<p>{project.description}</p>
-						{#each project.tags as tag}
+						{#each project.stack as tag (tag)}
 							<span>{tag}</span>
 						{/each}
 					</li>
