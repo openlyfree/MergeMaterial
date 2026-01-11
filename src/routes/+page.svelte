@@ -16,9 +16,10 @@
 
 			if (stored) likedIndices = [...new Set(JSON.parse(stored) as number[])];
 
-			if (lastIdx) now = parseInt(lastIdx);
-		} catch (error) {
-			console.error('local storage or json parse:', error);
+		if (lastIdx) now = parseInt(lastIdx);
+		if (now < (projects.at(0)?.id ?? 0)) now = projects.at(0)?.id ?? 0;
+	} catch (error) {
+		console.error('local storage or json parse:', error);
 		}
 	});
 
@@ -27,7 +28,7 @@
 
 		try {
 			if (like) {
-				if (!likedIndices.includes(now)) {
+				if (!likedIndices.includes(now)) { 
 					likedIndices.push(now);
 					localStorage.setItem('likedProjects', JSON.stringify(likedIndices));
 				}
