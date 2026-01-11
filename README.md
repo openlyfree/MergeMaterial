@@ -1,4 +1,4 @@
-# MergeMaterial 🧩
+# MergeMaterial
 
 > **Tinder for project ideas.** Find your next coding obsession. Or just scroll.
 
@@ -20,7 +20,7 @@ Built with the latest web technologies:
 - **AI:** Google Gemini API
 - **Deployment:** Github Pages
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -46,7 +46,7 @@ You need to have **[Bun](https://bun.sh/)** installed on your machine.
    bun run dev
    ```
 
-### 🤖 Generating Projects (Optional)
+### Generating Projects (Optional)
 
 The projects are statically stored in `src/lib/projects.json`. To regenerate them using AI:
 
@@ -65,11 +65,11 @@ The projects are statically stored in `src/lib/projects.json`. To regenerate the
    ```
    if thats more your style
 
-## 🔄 Automated Updates
+## Automated Updates
 
 This repository is configured to use **GitHub Actions** to run the generation script daily at midnight. It fetches new ideas from Gemini, updates `projects.json`, and commits the changes back to the repo automatically.
 
-## 📝 TODO / Roadmap
+## TODO / Roadmap
 
 - [ ] Improve card swipe physics and add transition effects for a smoother feel.
 - [ ] logging for likes/dislikes to better understand user preferences using github issues maybe?
@@ -77,16 +77,4 @@ This repository is configured to use **GitHub Actions** to run the generation sc
 - [ ] Add ability to filter ideas by tech stack or difficulty.
 - [ ] Progressive web app maybe?
 
-## 🤝 Contributing
-
-Pull requests are welcome! If you have ideas for better prompts or UI improvements, feel free to fork and submit a PR.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-_Made with ❤️ and too much caffeine._
+_Made with too much monster and a need to finish this project before starting other ones._
