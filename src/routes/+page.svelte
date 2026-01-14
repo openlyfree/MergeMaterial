@@ -17,7 +17,6 @@
 			if (stored) likedIndices = [...new Set(JSON.parse(stored) as number[])];
 
 			if (lastIdx) now = parseInt(lastIdx);
-			if (now < (projects.at(0)?.id ?? 0)) now = projects.at(0)?.id ?? 0;
 		} catch (error) {
 			console.error('local storage or json parse:', error);
 		}
