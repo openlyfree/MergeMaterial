@@ -1,40 +1,40 @@
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${Bun.env.GEMINI_API_KEY}`;
+const API_KEY = Bun.env.GEMINI_API_KEY;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 import projects from '../src/lib/projects.json';
-console.log();
-
-const ai_prompt = `
-Generate 50 intermediate coding project ideas as a JSON array.
-
-Requirements:
-
-Tone: Focus on modern, "indie-hacker" style projects (Micro-SaaS, CLI tools, API mashups, and developer utilities).
-
-Difficulty: Use an integer between 1 and 5 as in stars.
-
-Stack: The stack must be a JSON array of strings (e.g., ["Svelte", "Bun", "SQLite"]).
-
-Schema: Use this exact JSON format: [ { "id": number incrementing from ${projects.at(projects.length - 1)?.id}, "title": string, "description": string, "difficulty": number, "stack": [string, string, string] } ]
-
-Output Format: Return only the raw JSON array. Do not use Markdown code blocks, do not use bold text, and do not include any introductory or concluding prose.
-
-Constraints: No trivial CRUD apps. Every project must include an external API, a specific library, or a unique hardware/browser integration.
-`;
 
 async function generate() {
-	console.log('Fetching from Gemini...');
+	if (!API_KEY) {
+		console.error('❌ GEMINI_API_KEY is not set!');
+		process.exit(1);
+	}
+
+	const lastId = projects.at(-1)?.id || 0;
 
 	const payload = {
 		contents: [
 			{
 				parts: [
-					{
-						text: ai_prompt
-					}
+					{ text: `Generate 20 intermediate coding project ideas. Start IDs from ${lastId + 1}.` }
 				]
 			}
 		],
 		generationConfig: {
-			responseMimeType: 'application/json'
+			responseMimeType: 'application/json',
+			// 2026 Pro-Tip: Force the schema so the AI doesn't hallucinate prose
+			responseSchema: {
+				type: 'array',
+				items: {
+					type: 'object',
+					properties: {
+						id: { type: 'number' },
+						title: { type: 'string' },
+						description: { type: 'string' },
+						difficulty: { type: 'number' },
+						stack: { type: 'array', items: { type: 'string' } }
+					},
+					required: ['id', 'title', 'description', 'difficulty', 'stack']
+				}
+			}
 		}
 	};
 
@@ -44,16 +44,17 @@ async function generate() {
 		body: JSON.stringify(payload)
 	});
 
-	const result = await response.json();
-
-	if (result.error) {
-		console.error('API Error:', JSON.stringify(result.error, null, 2));
-		return;
+	if (!response.ok) {
+		const text = await response.text();
+		console.error(`HTTP Error ${response.status}:`, text);
+		process.exit(1);
 	}
 
+	const result = await response.json();
 	const content = result.candidates[0].content.parts[0].text;
+
 	await Bun.write('./src/lib/projects.json', content);
-	console.log('Done! projects.json is refreshed.');
+	console.log('✅ projects.json updated successfully.');
 }
 
 generate();
